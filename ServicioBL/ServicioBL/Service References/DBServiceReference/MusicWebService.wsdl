@@ -1,0 +1,683 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://service.musicservice.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="MusicWebService" targetNamespace="http://service.musicservice.com/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://pastelillo.patitocreations.com:8080/musicservice/MusicWebService?xsd=1" namespace="http://service.musicservice.com/" />
+    </xsd:schema>
+  </types>
+  <message name="matches">
+    <part name="parameters" element="tns:matches" />
+  </message>
+  <message name="matchesResponse">
+    <part name="parameters" element="tns:matchesResponse" />
+  </message>
+  <message name="findAllArtistas">
+    <part name="parameters" element="tns:findAllArtistas" />
+  </message>
+  <message name="findAllArtistasResponse">
+    <part name="parameters" element="tns:findAllArtistasResponse" />
+  </message>
+  <message name="findRangeArtistas">
+    <part name="parameters" element="tns:findRangeArtistas" />
+  </message>
+  <message name="findRangeArtistasResponse">
+    <part name="parameters" element="tns:findRangeArtistasResponse" />
+  </message>
+  <message name="findCantidadArtistas">
+    <part name="parameters" element="tns:findCantidadArtistas" />
+  </message>
+  <message name="findCantidadArtistasResponse">
+    <part name="parameters" element="tns:findCantidadArtistasResponse" />
+  </message>
+  <message name="findArtistaById">
+    <part name="parameters" element="tns:findArtistaById" />
+  </message>
+  <message name="findArtistaByIdResponse">
+    <part name="parameters" element="tns:findArtistaByIdResponse" />
+  </message>
+  <message name="findArtistaByNombre">
+    <part name="parameters" element="tns:findArtistaByNombre" />
+  </message>
+  <message name="findArtistaByNombreResponse">
+    <part name="parameters" element="tns:findArtistaByNombreResponse" />
+  </message>
+  <message name="updateCancion">
+    <part name="parameters" element="tns:updateCancion" />
+  </message>
+  <message name="updateCancionResponse">
+    <part name="parameters" element="tns:updateCancionResponse" />
+  </message>
+  <message name="deleteCancion">
+    <part name="parameters" element="tns:deleteCancion" />
+  </message>
+  <message name="deleteCancionResponse">
+    <part name="parameters" element="tns:deleteCancionResponse" />
+  </message>
+  <message name="addCancion">
+    <part name="parameters" element="tns:addCancion" />
+  </message>
+  <message name="addCancionResponse">
+    <part name="parameters" element="tns:addCancionResponse" />
+  </message>
+  <message name="findCancionesByAlbumId">
+    <part name="parameters" element="tns:findCancionesByAlbumId" />
+  </message>
+  <message name="findCancionesByAlbumIdResponse">
+    <part name="parameters" element="tns:findCancionesByAlbumIdResponse" />
+  </message>
+  <message name="findUsuarioById">
+    <part name="parameters" element="tns:findUsuarioById" />
+  </message>
+  <message name="findUsuarioByIdResponse">
+    <part name="parameters" element="tns:findUsuarioByIdResponse" />
+  </message>
+  <message name="findUsuarioByUsername">
+    <part name="parameters" element="tns:findUsuarioByUsername" />
+  </message>
+  <message name="findUsuarioByUsernameResponse">
+    <part name="parameters" element="tns:findUsuarioByUsernameResponse" />
+  </message>
+  <message name="updateUsuario">
+    <part name="parameters" element="tns:updateUsuario" />
+  </message>
+  <message name="updateUsuarioResponse">
+    <part name="parameters" element="tns:updateUsuarioResponse" />
+  </message>
+  <message name="addUsuario">
+    <part name="parameters" element="tns:addUsuario" />
+  </message>
+  <message name="addUsuarioResponse">
+    <part name="parameters" element="tns:addUsuarioResponse" />
+  </message>
+  <message name="deleteUsuario">
+    <part name="parameters" element="tns:deleteUsuario" />
+  </message>
+  <message name="deleteUsuarioResponse">
+    <part name="parameters" element="tns:deleteUsuarioResponse" />
+  </message>
+  <message name="addArtistaFavorito">
+    <part name="parameters" element="tns:addArtistaFavorito" />
+  </message>
+  <message name="addArtistaFavoritoResponse">
+    <part name="parameters" element="tns:addArtistaFavoritoResponse" />
+  </message>
+  <message name="deleteArtistaFavorito">
+    <part name="parameters" element="tns:deleteArtistaFavorito" />
+  </message>
+  <message name="deleteArtistaFavoritoResponse">
+    <part name="parameters" element="tns:deleteArtistaFavoritoResponse" />
+  </message>
+  <message name="findFavoritos">
+    <part name="parameters" element="tns:findFavoritos" />
+  </message>
+  <message name="findFavoritosResponse">
+    <part name="parameters" element="tns:findFavoritosResponse" />
+  </message>
+  <message name="updateArtista">
+    <part name="parameters" element="tns:updateArtista" />
+  </message>
+  <message name="updateArtistaResponse">
+    <part name="parameters" element="tns:updateArtistaResponse" />
+  </message>
+  <message name="addArtista">
+    <part name="parameters" element="tns:addArtista" />
+  </message>
+  <message name="addArtistaResponse">
+    <part name="parameters" element="tns:addArtistaResponse" />
+  </message>
+  <message name="deleteArtista">
+    <part name="parameters" element="tns:deleteArtista" />
+  </message>
+  <message name="deleteArtistaResponse">
+    <part name="parameters" element="tns:deleteArtistaResponse" />
+  </message>
+  <message name="findAllAlbums">
+    <part name="parameters" element="tns:findAllAlbums" />
+  </message>
+  <message name="findAllAlbumsResponse">
+    <part name="parameters" element="tns:findAllAlbumsResponse" />
+  </message>
+  <message name="findRangeAlbums">
+    <part name="parameters" element="tns:findRangeAlbums" />
+  </message>
+  <message name="findRangeAlbumsResponse">
+    <part name="parameters" element="tns:findRangeAlbumsResponse" />
+  </message>
+  <message name="findCantidadAlbums">
+    <part name="parameters" element="tns:findCantidadAlbums" />
+  </message>
+  <message name="findCantidadAlbumsResponse">
+    <part name="parameters" element="tns:findCantidadAlbumsResponse" />
+  </message>
+  <message name="findAlbumsByIdArtista">
+    <part name="parameters" element="tns:findAlbumsByIdArtista" />
+  </message>
+  <message name="findAlbumsByIdArtistaResponse">
+    <part name="parameters" element="tns:findAlbumsByIdArtistaResponse" />
+  </message>
+  <message name="updateAlbum">
+    <part name="parameters" element="tns:updateAlbum" />
+  </message>
+  <message name="updateAlbumResponse">
+    <part name="parameters" element="tns:updateAlbumResponse" />
+  </message>
+  <message name="findAlbumById">
+    <part name="parameters" element="tns:findAlbumById" />
+  </message>
+  <message name="findAlbumByIdResponse">
+    <part name="parameters" element="tns:findAlbumByIdResponse" />
+  </message>
+  <message name="findAlbumByNombre">
+    <part name="parameters" element="tns:findAlbumByNombre" />
+  </message>
+  <message name="findAlbumByNombreResponse">
+    <part name="parameters" element="tns:findAlbumByNombreResponse" />
+  </message>
+  <message name="addAlbum">
+    <part name="parameters" element="tns:addAlbum" />
+  </message>
+  <message name="addAlbumResponse">
+    <part name="parameters" element="tns:addAlbumResponse" />
+  </message>
+  <message name="deleteAlbum">
+    <part name="parameters" element="tns:deleteAlbum" />
+  </message>
+  <message name="deleteAlbumResponse">
+    <part name="parameters" element="tns:deleteAlbumResponse" />
+  </message>
+  <message name="findAllCanciones">
+    <part name="parameters" element="tns:findAllCanciones" />
+  </message>
+  <message name="findAllCancionesResponse">
+    <part name="parameters" element="tns:findAllCancionesResponse" />
+  </message>
+  <message name="findRangeCanciones">
+    <part name="parameters" element="tns:findRangeCanciones" />
+  </message>
+  <message name="findRangeCancionesResponse">
+    <part name="parameters" element="tns:findRangeCancionesResponse" />
+  </message>
+  <message name="findCantidadCanciones">
+    <part name="parameters" element="tns:findCantidadCanciones" />
+  </message>
+  <message name="findCantidadCancionesResponse">
+    <part name="parameters" element="tns:findCantidadCancionesResponse" />
+  </message>
+  <message name="findCancionById">
+    <part name="parameters" element="tns:findCancionById" />
+  </message>
+  <message name="findCancionByIdResponse">
+    <part name="parameters" element="tns:findCancionByIdResponse" />
+  </message>
+  <message name="findCancionesByNombre">
+    <part name="parameters" element="tns:findCancionesByNombre" />
+  </message>
+  <message name="findCancionesByNombreResponse">
+    <part name="parameters" element="tns:findCancionesByNombreResponse" />
+  </message>
+  <portType name="MusicWebService">
+    <operation name="matches">
+      <input wsam:Action="http://service.musicservice.com/MusicWebService/matchesRequest" message="tns:matches" />
+      <output wsam:Action="http://service.musicservice.com/MusicWebService/matchesResponse" message="tns:matchesResponse" />
+    </operation>
+    <operation name="findAllArtistas">
+      <input wsam:Action="http://service.musicservice.com/MusicWebService/findAllArtistasRequest" message="tns:findAllArtistas" />
+      <output wsam:Action="http://service.musicservice.com/MusicWebService/findAllArtistasResponse" message="tns:findAllArtistasResponse" />
+    </operation>
+    <operation name="findRangeArtistas">
+      <input wsam:Action="http://service.musicservice.com/MusicWebService/findRangeArtistasRequest" message="tns:findRangeArtistas" />
+      <output wsam:Action="http://service.musicservice.com/MusicWebService/findRangeArtistasResponse" message="tns:findRangeArtistasResponse" />
+    </operation>
+    <operation name="findCantidadArtistas">
+      <input wsam:Action="http://service.musicservice.com/MusicWebService/findCantidadArtistasRequest" message="tns:findCantidadArtistas" />
+      <output wsam:Action="http://service.musicservice.com/MusicWebService/findCantidadArtistasResponse" message="tns:findCantidadArtistasResponse" />
+    </operation>
+    <operation name="findArtistaById">
+      <input wsam:Action="http://service.musicservice.com/MusicWebService/findArtistaByIdRequest" message="tns:findArtistaById" />
+      <output wsam:Action="http://service.musicservice.com/MusicWebService/findArtistaByIdResponse" message="tns:findArtistaByIdResponse" />
+    </operation>
+    <operation name="findArtistaByNombre">
+      <input wsam:Action="http://service.musicservice.com/MusicWebService/findArtistaByNombreRequest" message="tns:findArtistaByNombre" />
+      <output wsam:Action="http://service.musicservice.com/MusicWebService/findArtistaByNombreResponse" message="tns:findArtistaByNombreResponse" />
+    </operation>
+    <operation name="updateCancion">
+      <input wsam:Action="http://service.musicservice.com/MusicWebService/updateCancionRequest" message="tns:updateCancion" />
+      <output wsam:Action="http://service.musicservice.com/MusicWebService/updateCancionResponse" message="tns:updateCancionResponse" />
+    </operation>
+    <operation name="deleteCancion">
+      <input wsam:Action="http://service.musicservice.com/MusicWebService/deleteCancionRequest" message="tns:deleteCancion" />
+      <output wsam:Action="http://service.musicservice.com/MusicWebService/deleteCancionResponse" message="tns:deleteCancionResponse" />
+    </operation>
+    <operation name="addCancion">
+      <input wsam:Action="http://service.musicservice.com/MusicWebService/addCancionRequest" message="tns:addCancion" />
+      <output wsam:Action="http://service.musicservice.com/MusicWebService/addCancionResponse" message="tns:addCancionResponse" />
+    </operation>
+    <operation name="findCancionesByAlbumId">
+      <input wsam:Action="http://service.musicservice.com/MusicWebService/findCancionesByAlbumIdRequest" message="tns:findCancionesByAlbumId" />
+      <output wsam:Action="http://service.musicservice.com/MusicWebService/findCancionesByAlbumIdResponse" message="tns:findCancionesByAlbumIdResponse" />
+    </operation>
+    <operation name="findUsuarioById">
+      <input wsam:Action="http://service.musicservice.com/MusicWebService/findUsuarioByIdRequest" message="tns:findUsuarioById" />
+      <output wsam:Action="http://service.musicservice.com/MusicWebService/findUsuarioByIdResponse" message="tns:findUsuarioByIdResponse" />
+    </operation>
+    <operation name="findUsuarioByUsername">
+      <input wsam:Action="http://service.musicservice.com/MusicWebService/findUsuarioByUsernameRequest" message="tns:findUsuarioByUsername" />
+      <output wsam:Action="http://service.musicservice.com/MusicWebService/findUsuarioByUsernameResponse" message="tns:findUsuarioByUsernameResponse" />
+    </operation>
+    <operation name="updateUsuario">
+      <input wsam:Action="http://service.musicservice.com/MusicWebService/updateUsuarioRequest" message="tns:updateUsuario" />
+      <output wsam:Action="http://service.musicservice.com/MusicWebService/updateUsuarioResponse" message="tns:updateUsuarioResponse" />
+    </operation>
+    <operation name="addUsuario">
+      <input wsam:Action="http://service.musicservice.com/MusicWebService/addUsuarioRequest" message="tns:addUsuario" />
+      <output wsam:Action="http://service.musicservice.com/MusicWebService/addUsuarioResponse" message="tns:addUsuarioResponse" />
+    </operation>
+    <operation name="deleteUsuario">
+      <input wsam:Action="http://service.musicservice.com/MusicWebService/deleteUsuarioRequest" message="tns:deleteUsuario" />
+      <output wsam:Action="http://service.musicservice.com/MusicWebService/deleteUsuarioResponse" message="tns:deleteUsuarioResponse" />
+    </operation>
+    <operation name="addArtistaFavorito">
+      <input wsam:Action="http://service.musicservice.com/MusicWebService/addArtistaFavoritoRequest" message="tns:addArtistaFavorito" />
+      <output wsam:Action="http://service.musicservice.com/MusicWebService/addArtistaFavoritoResponse" message="tns:addArtistaFavoritoResponse" />
+    </operation>
+    <operation name="deleteArtistaFavorito">
+      <input wsam:Action="http://service.musicservice.com/MusicWebService/deleteArtistaFavoritoRequest" message="tns:deleteArtistaFavorito" />
+      <output wsam:Action="http://service.musicservice.com/MusicWebService/deleteArtistaFavoritoResponse" message="tns:deleteArtistaFavoritoResponse" />
+    </operation>
+    <operation name="findFavoritos">
+      <input wsam:Action="http://service.musicservice.com/MusicWebService/findFavoritosRequest" message="tns:findFavoritos" />
+      <output wsam:Action="http://service.musicservice.com/MusicWebService/findFavoritosResponse" message="tns:findFavoritosResponse" />
+    </operation>
+    <operation name="updateArtista">
+      <input wsam:Action="http://service.musicservice.com/MusicWebService/updateArtistaRequest" message="tns:updateArtista" />
+      <output wsam:Action="http://service.musicservice.com/MusicWebService/updateArtistaResponse" message="tns:updateArtistaResponse" />
+    </operation>
+    <operation name="addArtista">
+      <input wsam:Action="http://service.musicservice.com/MusicWebService/addArtistaRequest" message="tns:addArtista" />
+      <output wsam:Action="http://service.musicservice.com/MusicWebService/addArtistaResponse" message="tns:addArtistaResponse" />
+    </operation>
+    <operation name="deleteArtista">
+      <input wsam:Action="http://service.musicservice.com/MusicWebService/deleteArtistaRequest" message="tns:deleteArtista" />
+      <output wsam:Action="http://service.musicservice.com/MusicWebService/deleteArtistaResponse" message="tns:deleteArtistaResponse" />
+    </operation>
+    <operation name="findAllAlbums">
+      <input wsam:Action="http://service.musicservice.com/MusicWebService/findAllAlbumsRequest" message="tns:findAllAlbums" />
+      <output wsam:Action="http://service.musicservice.com/MusicWebService/findAllAlbumsResponse" message="tns:findAllAlbumsResponse" />
+    </operation>
+    <operation name="findRangeAlbums">
+      <input wsam:Action="http://service.musicservice.com/MusicWebService/findRangeAlbumsRequest" message="tns:findRangeAlbums" />
+      <output wsam:Action="http://service.musicservice.com/MusicWebService/findRangeAlbumsResponse" message="tns:findRangeAlbumsResponse" />
+    </operation>
+    <operation name="findCantidadAlbums">
+      <input wsam:Action="http://service.musicservice.com/MusicWebService/findCantidadAlbumsRequest" message="tns:findCantidadAlbums" />
+      <output wsam:Action="http://service.musicservice.com/MusicWebService/findCantidadAlbumsResponse" message="tns:findCantidadAlbumsResponse" />
+    </operation>
+    <operation name="findAlbumsByIdArtista">
+      <input wsam:Action="http://service.musicservice.com/MusicWebService/findAlbumsByIdArtistaRequest" message="tns:findAlbumsByIdArtista" />
+      <output wsam:Action="http://service.musicservice.com/MusicWebService/findAlbumsByIdArtistaResponse" message="tns:findAlbumsByIdArtistaResponse" />
+    </operation>
+    <operation name="updateAlbum">
+      <input wsam:Action="http://service.musicservice.com/MusicWebService/updateAlbumRequest" message="tns:updateAlbum" />
+      <output wsam:Action="http://service.musicservice.com/MusicWebService/updateAlbumResponse" message="tns:updateAlbumResponse" />
+    </operation>
+    <operation name="findAlbumById">
+      <input wsam:Action="http://service.musicservice.com/MusicWebService/findAlbumByIdRequest" message="tns:findAlbumById" />
+      <output wsam:Action="http://service.musicservice.com/MusicWebService/findAlbumByIdResponse" message="tns:findAlbumByIdResponse" />
+    </operation>
+    <operation name="findAlbumByNombre">
+      <input wsam:Action="http://service.musicservice.com/MusicWebService/findAlbumByNombreRequest" message="tns:findAlbumByNombre" />
+      <output wsam:Action="http://service.musicservice.com/MusicWebService/findAlbumByNombreResponse" message="tns:findAlbumByNombreResponse" />
+    </operation>
+    <operation name="addAlbum">
+      <input wsam:Action="http://service.musicservice.com/MusicWebService/addAlbumRequest" message="tns:addAlbum" />
+      <output wsam:Action="http://service.musicservice.com/MusicWebService/addAlbumResponse" message="tns:addAlbumResponse" />
+    </operation>
+    <operation name="deleteAlbum">
+      <input wsam:Action="http://service.musicservice.com/MusicWebService/deleteAlbumRequest" message="tns:deleteAlbum" />
+      <output wsam:Action="http://service.musicservice.com/MusicWebService/deleteAlbumResponse" message="tns:deleteAlbumResponse" />
+    </operation>
+    <operation name="findAllCanciones">
+      <input wsam:Action="http://service.musicservice.com/MusicWebService/findAllCancionesRequest" message="tns:findAllCanciones" />
+      <output wsam:Action="http://service.musicservice.com/MusicWebService/findAllCancionesResponse" message="tns:findAllCancionesResponse" />
+    </operation>
+    <operation name="findRangeCanciones">
+      <input wsam:Action="http://service.musicservice.com/MusicWebService/findRangeCancionesRequest" message="tns:findRangeCanciones" />
+      <output wsam:Action="http://service.musicservice.com/MusicWebService/findRangeCancionesResponse" message="tns:findRangeCancionesResponse" />
+    </operation>
+    <operation name="findCantidadCanciones">
+      <input wsam:Action="http://service.musicservice.com/MusicWebService/findCantidadCancionesRequest" message="tns:findCantidadCanciones" />
+      <output wsam:Action="http://service.musicservice.com/MusicWebService/findCantidadCancionesResponse" message="tns:findCantidadCancionesResponse" />
+    </operation>
+    <operation name="findCancionById">
+      <input wsam:Action="http://service.musicservice.com/MusicWebService/findCancionByIdRequest" message="tns:findCancionById" />
+      <output wsam:Action="http://service.musicservice.com/MusicWebService/findCancionByIdResponse" message="tns:findCancionByIdResponse" />
+    </operation>
+    <operation name="findCancionesByNombre">
+      <input wsam:Action="http://service.musicservice.com/MusicWebService/findCancionesByNombreRequest" message="tns:findCancionesByNombre" />
+      <output wsam:Action="http://service.musicservice.com/MusicWebService/findCancionesByNombreResponse" message="tns:findCancionesByNombreResponse" />
+    </operation>
+  </portType>
+  <binding name="MusicWebServicePortBinding" type="tns:MusicWebService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="matches">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="findAllArtistas">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="findRangeArtistas">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="findCantidadArtistas">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="findArtistaById">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="findArtistaByNombre">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="updateCancion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="deleteCancion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="addCancion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="findCancionesByAlbumId">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="findUsuarioById">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="findUsuarioByUsername">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="updateUsuario">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="addUsuario">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="deleteUsuario">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="addArtistaFavorito">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="deleteArtistaFavorito">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="findFavoritos">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="updateArtista">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="addArtista">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="deleteArtista">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="findAllAlbums">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="findRangeAlbums">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="findCantidadAlbums">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="findAlbumsByIdArtista">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="updateAlbum">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="findAlbumById">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="findAlbumByNombre">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="addAlbum">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="deleteAlbum">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="findAllCanciones">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="findRangeCanciones">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="findCantidadCanciones">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="findCancionById">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="findCancionesByNombre">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="MusicWebService">
+    <port name="MusicWebServicePort" binding="tns:MusicWebServicePortBinding">
+      <soap:address location="http://pastelillo.patitocreations.com:8080/musicservice/MusicWebService" />
+    </port>
+  </service>
+</definitions>

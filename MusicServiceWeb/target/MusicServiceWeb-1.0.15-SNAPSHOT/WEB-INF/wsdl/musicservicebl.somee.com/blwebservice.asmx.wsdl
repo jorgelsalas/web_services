@@ -1,0 +1,1504 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://musicservicebl.somee.com" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s1="http://service.musicservice.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://musicservicebl.somee.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://musicservicebl.somee.com">
+      <s:import namespace="http://service.musicservice.com/" />
+      <s:element name="GetCantidadDePaginasParaMostrarArtistas">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCantidadDePaginasParaMostrarArtistasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetCantidadDePaginasParaMostrarArtistasResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCantidadDePaginasParaMostrarAlbums">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCantidadDePaginasParaMostrarAlbumsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetCantidadDePaginasParaMostrarAlbumsResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCantidadDePaginasParaMostrarCanciones">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCantidadDePaginasParaMostrarCancionesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetCantidadDePaginasParaMostrarCancionesResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTopArtistas">
+        <s:complexType />
+      </s:element>
+      <s:element name="getTopArtistasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getTopArtistasResult" type="tns:ArrayOfArtista" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfArtista">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="artista" nillable="true" type="s1:artista" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getArtistasDePagina">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="numeroPagina" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getArtistasDePaginaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getArtistasDePaginaResult" type="tns:ArrayOfArtista" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getArtistaByNombre">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getArtistaByNombreResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getArtistaByNombreResult" type="s1:artista" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getArtistaById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getArtistaByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getArtistaByIdResult" type="s1:artista" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateArtista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pArtista" type="s1:artista" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateArtistaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="updateArtistaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addArtista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pArtista" type="s1:artista" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addArtistaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="addArtistaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteArtista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pArtista" type="s1:artista" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteArtistaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="deleteArtistaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAlbumsDePagina">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="numeroPagina" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAlbumsDePaginaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAlbumsDePaginaResult" type="tns:ArrayOfAlbum" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAlbum">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="album" nillable="true" type="s1:album" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="addAlbum">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pAlbum" type="s1:album" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addAlbumResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="addAlbumResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateAlbum">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pAlbum" type="s1:album" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateAlbumResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="updateAlbumResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteAlbum">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pAlbum" type="s1:album" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteAlbumResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="deleteAlbumResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAlbumById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAlbumByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAlbumByIdResult" type="s1:album" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAlbumsDeArtista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pArtista" type="s1:artista" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAlbumsDeArtistaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAlbumsDeArtistaResult" type="tns:ArrayOfAlbum" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAlbumsByNombre">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAlbumsByNombreResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAlbumsByNombreResult" type="tns:ArrayOfAlbum" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCancionesDePagina">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="numeroPagina" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCancionesDePaginaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCancionesDePaginaResult" type="tns:ArrayOfCancion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCancion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="cancion" nillable="true" type="s1:cancion" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getCancionesDeAlbum">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pAlbum" type="s1:album" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCancionesDeAlbumResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCancionesDeAlbumResult" type="tns:ArrayOfCancion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addCancion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pCancion" type="s1:cancion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addCancionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="addCancionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteCancion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pCancion" type="s1:cancion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteCancionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="deleteCancionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateCancion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pCancion" type="s1:cancion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateCancionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="updateCancionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCancionesConNombre">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCancionesConNombreResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCancionesConNombreResult" type="tns:ArrayOfCancion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getUsuarioById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getUsuarioByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getUsuarioByIdResult" type="s1:usuario" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getUsuarioByUsername">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getUsuarioByUsernameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getUsuarioByUsernameResult" type="s1:usuario" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pUsuario" type="s1:usuario" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="addUsuarioResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pUsuario" type="s1:usuario" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="updateUsuarioResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pUsuario" type="s1:usuario" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="deleteUsuarioResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteArtistaById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idArtista" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteArtistaByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="deleteArtistaByIdResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isValidLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isValidLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="isValidLoginResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getFavoritosDeUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pUsuario" type="s1:usuario" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getFavoritosDeUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getFavoritosDeUsuarioResult" type="tns:ArrayOfArtista" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addArtistaFavoritoAUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pArtista" type="s1:artista" />
+            <s:element minOccurs="0" maxOccurs="1" name="pUsuario" type="s1:usuario" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addArtistaFavoritoAUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="addArtistaFavoritoAUsuarioResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteArtistaFavoritoAUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pArtista" type="s1:artista" />
+            <s:element minOccurs="0" maxOccurs="1" name="pUsuario" type="s1:usuario" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteArtistaFavoritoAUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="deleteArtistaFavoritoAUsuarioResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCorreos">
+        <s:complexType />
+      </s:element>
+      <s:element name="getCorreosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCorreosResult" type="tns:ArrayOfCorreo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCorreo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Correo" nillable="true" type="tns:Correo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Correo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="correo1" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://service.musicservice.com/">
+      <s:complexType name="artista">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="generoArtista" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="idArtista" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="nombreArtista" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="album">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="fechaPublicacion" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="generoAlbum" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="idAlbum" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="idArtista" type="s1:artista" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="nombreAlbum" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="cancion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="idAlbum" type="s1:album" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="idCancion" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="nombreCancion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="numeroTrack" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="usuario">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="apellido1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="apellido2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="idPerfil" type="s1:perfil" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="idUsuario" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="username" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="perfil">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="idPerfil" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="nombrePerfil" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetCantidadDePaginasParaMostrarArtistasSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCantidadDePaginasParaMostrarArtistas" />
+  </wsdl:message>
+  <wsdl:message name="GetCantidadDePaginasParaMostrarArtistasSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCantidadDePaginasParaMostrarArtistasResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCantidadDePaginasParaMostrarAlbumsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCantidadDePaginasParaMostrarAlbums" />
+  </wsdl:message>
+  <wsdl:message name="GetCantidadDePaginasParaMostrarAlbumsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCantidadDePaginasParaMostrarAlbumsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCantidadDePaginasParaMostrarCancionesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCantidadDePaginasParaMostrarCanciones" />
+  </wsdl:message>
+  <wsdl:message name="GetCantidadDePaginasParaMostrarCancionesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCantidadDePaginasParaMostrarCancionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTopArtistasSoapIn">
+    <wsdl:part name="parameters" element="tns:getTopArtistas" />
+  </wsdl:message>
+  <wsdl:message name="getTopArtistasSoapOut">
+    <wsdl:part name="parameters" element="tns:getTopArtistasResponse" />
+  </wsdl:message>
+  <wsdl:message name="getArtistasDePaginaSoapIn">
+    <wsdl:part name="parameters" element="tns:getArtistasDePagina" />
+  </wsdl:message>
+  <wsdl:message name="getArtistasDePaginaSoapOut">
+    <wsdl:part name="parameters" element="tns:getArtistasDePaginaResponse" />
+  </wsdl:message>
+  <wsdl:message name="getArtistaByNombreSoapIn">
+    <wsdl:part name="parameters" element="tns:getArtistaByNombre" />
+  </wsdl:message>
+  <wsdl:message name="getArtistaByNombreSoapOut">
+    <wsdl:part name="parameters" element="tns:getArtistaByNombreResponse" />
+  </wsdl:message>
+  <wsdl:message name="getArtistaByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:getArtistaById" />
+  </wsdl:message>
+  <wsdl:message name="getArtistaByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:getArtistaByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateArtistaSoapIn">
+    <wsdl:part name="parameters" element="tns:updateArtista" />
+  </wsdl:message>
+  <wsdl:message name="updateArtistaSoapOut">
+    <wsdl:part name="parameters" element="tns:updateArtistaResponse" />
+  </wsdl:message>
+  <wsdl:message name="addArtistaSoapIn">
+    <wsdl:part name="parameters" element="tns:addArtista" />
+  </wsdl:message>
+  <wsdl:message name="addArtistaSoapOut">
+    <wsdl:part name="parameters" element="tns:addArtistaResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteArtistaSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteArtista" />
+  </wsdl:message>
+  <wsdl:message name="deleteArtistaSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteArtistaResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAlbumsDePaginaSoapIn">
+    <wsdl:part name="parameters" element="tns:getAlbumsDePagina" />
+  </wsdl:message>
+  <wsdl:message name="getAlbumsDePaginaSoapOut">
+    <wsdl:part name="parameters" element="tns:getAlbumsDePaginaResponse" />
+  </wsdl:message>
+  <wsdl:message name="addAlbumSoapIn">
+    <wsdl:part name="parameters" element="tns:addAlbum" />
+  </wsdl:message>
+  <wsdl:message name="addAlbumSoapOut">
+    <wsdl:part name="parameters" element="tns:addAlbumResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateAlbumSoapIn">
+    <wsdl:part name="parameters" element="tns:updateAlbum" />
+  </wsdl:message>
+  <wsdl:message name="updateAlbumSoapOut">
+    <wsdl:part name="parameters" element="tns:updateAlbumResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteAlbumSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteAlbum" />
+  </wsdl:message>
+  <wsdl:message name="deleteAlbumSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteAlbumResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAlbumByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:getAlbumById" />
+  </wsdl:message>
+  <wsdl:message name="getAlbumByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:getAlbumByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAlbumsDeArtistaSoapIn">
+    <wsdl:part name="parameters" element="tns:getAlbumsDeArtista" />
+  </wsdl:message>
+  <wsdl:message name="getAlbumsDeArtistaSoapOut">
+    <wsdl:part name="parameters" element="tns:getAlbumsDeArtistaResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAlbumsByNombreSoapIn">
+    <wsdl:part name="parameters" element="tns:getAlbumsByNombre" />
+  </wsdl:message>
+  <wsdl:message name="getAlbumsByNombreSoapOut">
+    <wsdl:part name="parameters" element="tns:getAlbumsByNombreResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCancionesDePaginaSoapIn">
+    <wsdl:part name="parameters" element="tns:getCancionesDePagina" />
+  </wsdl:message>
+  <wsdl:message name="getCancionesDePaginaSoapOut">
+    <wsdl:part name="parameters" element="tns:getCancionesDePaginaResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCancionesDeAlbumSoapIn">
+    <wsdl:part name="parameters" element="tns:getCancionesDeAlbum" />
+  </wsdl:message>
+  <wsdl:message name="getCancionesDeAlbumSoapOut">
+    <wsdl:part name="parameters" element="tns:getCancionesDeAlbumResponse" />
+  </wsdl:message>
+  <wsdl:message name="addCancionSoapIn">
+    <wsdl:part name="parameters" element="tns:addCancion" />
+  </wsdl:message>
+  <wsdl:message name="addCancionSoapOut">
+    <wsdl:part name="parameters" element="tns:addCancionResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteCancionSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteCancion" />
+  </wsdl:message>
+  <wsdl:message name="deleteCancionSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteCancionResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateCancionSoapIn">
+    <wsdl:part name="parameters" element="tns:updateCancion" />
+  </wsdl:message>
+  <wsdl:message name="updateCancionSoapOut">
+    <wsdl:part name="parameters" element="tns:updateCancionResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCancionesConNombreSoapIn">
+    <wsdl:part name="parameters" element="tns:getCancionesConNombre" />
+  </wsdl:message>
+  <wsdl:message name="getCancionesConNombreSoapOut">
+    <wsdl:part name="parameters" element="tns:getCancionesConNombreResponse" />
+  </wsdl:message>
+  <wsdl:message name="getUsuarioByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:getUsuarioById" />
+  </wsdl:message>
+  <wsdl:message name="getUsuarioByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:getUsuarioByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="getUsuarioByUsernameSoapIn">
+    <wsdl:part name="parameters" element="tns:getUsuarioByUsername" />
+  </wsdl:message>
+  <wsdl:message name="getUsuarioByUsernameSoapOut">
+    <wsdl:part name="parameters" element="tns:getUsuarioByUsernameResponse" />
+  </wsdl:message>
+  <wsdl:message name="addUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:addUsuario" />
+  </wsdl:message>
+  <wsdl:message name="addUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:addUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:updateUsuario" />
+  </wsdl:message>
+  <wsdl:message name="updateUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:updateUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteUsuario" />
+  </wsdl:message>
+  <wsdl:message name="deleteUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteArtistaByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteArtistaById" />
+  </wsdl:message>
+  <wsdl:message name="deleteArtistaByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteArtistaByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="isValidLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:isValidLogin" />
+  </wsdl:message>
+  <wsdl:message name="isValidLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:isValidLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="getFavoritosDeUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:getFavoritosDeUsuario" />
+  </wsdl:message>
+  <wsdl:message name="getFavoritosDeUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:getFavoritosDeUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="addArtistaFavoritoAUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:addArtistaFavoritoAUsuario" />
+  </wsdl:message>
+  <wsdl:message name="addArtistaFavoritoAUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:addArtistaFavoritoAUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteArtistaFavoritoAUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteArtistaFavoritoAUsuario" />
+  </wsdl:message>
+  <wsdl:message name="deleteArtistaFavoritoAUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteArtistaFavoritoAUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCorreosSoapIn">
+    <wsdl:part name="parameters" element="tns:getCorreos" />
+  </wsdl:message>
+  <wsdl:message name="getCorreosSoapOut">
+    <wsdl:part name="parameters" element="tns:getCorreosResponse" />
+  </wsdl:message>
+  <wsdl:portType name="BLWebServiceSoap">
+    <wsdl:operation name="GetCantidadDePaginasParaMostrarArtistas">
+      <wsdl:input message="tns:GetCantidadDePaginasParaMostrarArtistasSoapIn" />
+      <wsdl:output message="tns:GetCantidadDePaginasParaMostrarArtistasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCantidadDePaginasParaMostrarAlbums">
+      <wsdl:input message="tns:GetCantidadDePaginasParaMostrarAlbumsSoapIn" />
+      <wsdl:output message="tns:GetCantidadDePaginasParaMostrarAlbumsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCantidadDePaginasParaMostrarCanciones">
+      <wsdl:input message="tns:GetCantidadDePaginasParaMostrarCancionesSoapIn" />
+      <wsdl:output message="tns:GetCantidadDePaginasParaMostrarCancionesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTopArtistas">
+      <wsdl:input message="tns:getTopArtistasSoapIn" />
+      <wsdl:output message="tns:getTopArtistasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getArtistasDePagina">
+      <wsdl:input message="tns:getArtistasDePaginaSoapIn" />
+      <wsdl:output message="tns:getArtistasDePaginaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getArtistaByNombre">
+      <wsdl:input message="tns:getArtistaByNombreSoapIn" />
+      <wsdl:output message="tns:getArtistaByNombreSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getArtistaById">
+      <wsdl:input message="tns:getArtistaByIdSoapIn" />
+      <wsdl:output message="tns:getArtistaByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateArtista">
+      <wsdl:input message="tns:updateArtistaSoapIn" />
+      <wsdl:output message="tns:updateArtistaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addArtista">
+      <wsdl:input message="tns:addArtistaSoapIn" />
+      <wsdl:output message="tns:addArtistaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteArtista">
+      <wsdl:input message="tns:deleteArtistaSoapIn" />
+      <wsdl:output message="tns:deleteArtistaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAlbumsDePagina">
+      <wsdl:input message="tns:getAlbumsDePaginaSoapIn" />
+      <wsdl:output message="tns:getAlbumsDePaginaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addAlbum">
+      <wsdl:input message="tns:addAlbumSoapIn" />
+      <wsdl:output message="tns:addAlbumSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateAlbum">
+      <wsdl:input message="tns:updateAlbumSoapIn" />
+      <wsdl:output message="tns:updateAlbumSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteAlbum">
+      <wsdl:input message="tns:deleteAlbumSoapIn" />
+      <wsdl:output message="tns:deleteAlbumSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAlbumById">
+      <wsdl:input message="tns:getAlbumByIdSoapIn" />
+      <wsdl:output message="tns:getAlbumByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAlbumsDeArtista">
+      <wsdl:input message="tns:getAlbumsDeArtistaSoapIn" />
+      <wsdl:output message="tns:getAlbumsDeArtistaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAlbumsByNombre">
+      <wsdl:input message="tns:getAlbumsByNombreSoapIn" />
+      <wsdl:output message="tns:getAlbumsByNombreSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCancionesDePagina">
+      <wsdl:input message="tns:getCancionesDePaginaSoapIn" />
+      <wsdl:output message="tns:getCancionesDePaginaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCancionesDeAlbum">
+      <wsdl:input message="tns:getCancionesDeAlbumSoapIn" />
+      <wsdl:output message="tns:getCancionesDeAlbumSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addCancion">
+      <wsdl:input message="tns:addCancionSoapIn" />
+      <wsdl:output message="tns:addCancionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteCancion">
+      <wsdl:input message="tns:deleteCancionSoapIn" />
+      <wsdl:output message="tns:deleteCancionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateCancion">
+      <wsdl:input message="tns:updateCancionSoapIn" />
+      <wsdl:output message="tns:updateCancionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCancionesConNombre">
+      <wsdl:input message="tns:getCancionesConNombreSoapIn" />
+      <wsdl:output message="tns:getCancionesConNombreSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getUsuarioById">
+      <wsdl:input message="tns:getUsuarioByIdSoapIn" />
+      <wsdl:output message="tns:getUsuarioByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getUsuarioByUsername">
+      <wsdl:input message="tns:getUsuarioByUsernameSoapIn" />
+      <wsdl:output message="tns:getUsuarioByUsernameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addUsuario">
+      <wsdl:input message="tns:addUsuarioSoapIn" />
+      <wsdl:output message="tns:addUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateUsuario">
+      <wsdl:input message="tns:updateUsuarioSoapIn" />
+      <wsdl:output message="tns:updateUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteUsuario">
+      <wsdl:input message="tns:deleteUsuarioSoapIn" />
+      <wsdl:output message="tns:deleteUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteArtistaById">
+      <wsdl:input message="tns:deleteArtistaByIdSoapIn" />
+      <wsdl:output message="tns:deleteArtistaByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isValidLogin">
+      <wsdl:input message="tns:isValidLoginSoapIn" />
+      <wsdl:output message="tns:isValidLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getFavoritosDeUsuario">
+      <wsdl:input message="tns:getFavoritosDeUsuarioSoapIn" />
+      <wsdl:output message="tns:getFavoritosDeUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addArtistaFavoritoAUsuario">
+      <wsdl:input message="tns:addArtistaFavoritoAUsuarioSoapIn" />
+      <wsdl:output message="tns:addArtistaFavoritoAUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteArtistaFavoritoAUsuario">
+      <wsdl:input message="tns:deleteArtistaFavoritoAUsuarioSoapIn" />
+      <wsdl:output message="tns:deleteArtistaFavoritoAUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCorreos">
+      <wsdl:input message="tns:getCorreosSoapIn" />
+      <wsdl:output message="tns:getCorreosSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BLWebServiceSoap" type="tns:BLWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCantidadDePaginasParaMostrarArtistas">
+      <soap:operation soapAction="http://musicservicebl.somee.com/GetCantidadDePaginasParaMostrarArtistas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCantidadDePaginasParaMostrarAlbums">
+      <soap:operation soapAction="http://musicservicebl.somee.com/GetCantidadDePaginasParaMostrarAlbums" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCantidadDePaginasParaMostrarCanciones">
+      <soap:operation soapAction="http://musicservicebl.somee.com/GetCantidadDePaginasParaMostrarCanciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTopArtistas">
+      <soap:operation soapAction="http://musicservicebl.somee.com/getTopArtistas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getArtistasDePagina">
+      <soap:operation soapAction="http://musicservicebl.somee.com/getArtistasDePagina" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getArtistaByNombre">
+      <soap:operation soapAction="http://musicservicebl.somee.com/getArtistaByNombre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getArtistaById">
+      <soap:operation soapAction="http://musicservicebl.somee.com/getArtistaById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateArtista">
+      <soap:operation soapAction="http://musicservicebl.somee.com/updateArtista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addArtista">
+      <soap:operation soapAction="http://musicservicebl.somee.com/addArtista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteArtista">
+      <soap:operation soapAction="http://musicservicebl.somee.com/deleteArtista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAlbumsDePagina">
+      <soap:operation soapAction="http://musicservicebl.somee.com/getAlbumsDePagina" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addAlbum">
+      <soap:operation soapAction="http://musicservicebl.somee.com/addAlbum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateAlbum">
+      <soap:operation soapAction="http://musicservicebl.somee.com/updateAlbum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAlbum">
+      <soap:operation soapAction="http://musicservicebl.somee.com/deleteAlbum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAlbumById">
+      <soap:operation soapAction="http://musicservicebl.somee.com/getAlbumById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAlbumsDeArtista">
+      <soap:operation soapAction="http://musicservicebl.somee.com/getAlbumsDeArtista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAlbumsByNombre">
+      <soap:operation soapAction="http://musicservicebl.somee.com/getAlbumsByNombre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCancionesDePagina">
+      <soap:operation soapAction="http://musicservicebl.somee.com/getCancionesDePagina" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCancionesDeAlbum">
+      <soap:operation soapAction="http://musicservicebl.somee.com/getCancionesDeAlbum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addCancion">
+      <soap:operation soapAction="http://musicservicebl.somee.com/addCancion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteCancion">
+      <soap:operation soapAction="http://musicservicebl.somee.com/deleteCancion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateCancion">
+      <soap:operation soapAction="http://musicservicebl.somee.com/updateCancion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCancionesConNombre">
+      <soap:operation soapAction="http://musicservicebl.somee.com/getCancionesConNombre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUsuarioById">
+      <soap:operation soapAction="http://musicservicebl.somee.com/getUsuarioById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUsuarioByUsername">
+      <soap:operation soapAction="http://musicservicebl.somee.com/getUsuarioByUsername" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addUsuario">
+      <soap:operation soapAction="http://musicservicebl.somee.com/addUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateUsuario">
+      <soap:operation soapAction="http://musicservicebl.somee.com/updateUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteUsuario">
+      <soap:operation soapAction="http://musicservicebl.somee.com/deleteUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteArtistaById">
+      <soap:operation soapAction="http://musicservicebl.somee.com/deleteArtistaById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isValidLogin">
+      <soap:operation soapAction="http://musicservicebl.somee.com/isValidLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFavoritosDeUsuario">
+      <soap:operation soapAction="http://musicservicebl.somee.com/getFavoritosDeUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addArtistaFavoritoAUsuario">
+      <soap:operation soapAction="http://musicservicebl.somee.com/addArtistaFavoritoAUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteArtistaFavoritoAUsuario">
+      <soap:operation soapAction="http://musicservicebl.somee.com/deleteArtistaFavoritoAUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCorreos">
+      <soap:operation soapAction="http://musicservicebl.somee.com/getCorreos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BLWebServiceSoap12" type="tns:BLWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCantidadDePaginasParaMostrarArtistas">
+      <soap12:operation soapAction="http://musicservicebl.somee.com/GetCantidadDePaginasParaMostrarArtistas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCantidadDePaginasParaMostrarAlbums">
+      <soap12:operation soapAction="http://musicservicebl.somee.com/GetCantidadDePaginasParaMostrarAlbums" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCantidadDePaginasParaMostrarCanciones">
+      <soap12:operation soapAction="http://musicservicebl.somee.com/GetCantidadDePaginasParaMostrarCanciones" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTopArtistas">
+      <soap12:operation soapAction="http://musicservicebl.somee.com/getTopArtistas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getArtistasDePagina">
+      <soap12:operation soapAction="http://musicservicebl.somee.com/getArtistasDePagina" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getArtistaByNombre">
+      <soap12:operation soapAction="http://musicservicebl.somee.com/getArtistaByNombre" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getArtistaById">
+      <soap12:operation soapAction="http://musicservicebl.somee.com/getArtistaById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateArtista">
+      <soap12:operation soapAction="http://musicservicebl.somee.com/updateArtista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addArtista">
+      <soap12:operation soapAction="http://musicservicebl.somee.com/addArtista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteArtista">
+      <soap12:operation soapAction="http://musicservicebl.somee.com/deleteArtista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAlbumsDePagina">
+      <soap12:operation soapAction="http://musicservicebl.somee.com/getAlbumsDePagina" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addAlbum">
+      <soap12:operation soapAction="http://musicservicebl.somee.com/addAlbum" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateAlbum">
+      <soap12:operation soapAction="http://musicservicebl.somee.com/updateAlbum" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAlbum">
+      <soap12:operation soapAction="http://musicservicebl.somee.com/deleteAlbum" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAlbumById">
+      <soap12:operation soapAction="http://musicservicebl.somee.com/getAlbumById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAlbumsDeArtista">
+      <soap12:operation soapAction="http://musicservicebl.somee.com/getAlbumsDeArtista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAlbumsByNombre">
+      <soap12:operation soapAction="http://musicservicebl.somee.com/getAlbumsByNombre" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCancionesDePagina">
+      <soap12:operation soapAction="http://musicservicebl.somee.com/getCancionesDePagina" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCancionesDeAlbum">
+      <soap12:operation soapAction="http://musicservicebl.somee.com/getCancionesDeAlbum" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addCancion">
+      <soap12:operation soapAction="http://musicservicebl.somee.com/addCancion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteCancion">
+      <soap12:operation soapAction="http://musicservicebl.somee.com/deleteCancion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateCancion">
+      <soap12:operation soapAction="http://musicservicebl.somee.com/updateCancion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCancionesConNombre">
+      <soap12:operation soapAction="http://musicservicebl.somee.com/getCancionesConNombre" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUsuarioById">
+      <soap12:operation soapAction="http://musicservicebl.somee.com/getUsuarioById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUsuarioByUsername">
+      <soap12:operation soapAction="http://musicservicebl.somee.com/getUsuarioByUsername" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addUsuario">
+      <soap12:operation soapAction="http://musicservicebl.somee.com/addUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateUsuario">
+      <soap12:operation soapAction="http://musicservicebl.somee.com/updateUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteUsuario">
+      <soap12:operation soapAction="http://musicservicebl.somee.com/deleteUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteArtistaById">
+      <soap12:operation soapAction="http://musicservicebl.somee.com/deleteArtistaById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isValidLogin">
+      <soap12:operation soapAction="http://musicservicebl.somee.com/isValidLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFavoritosDeUsuario">
+      <soap12:operation soapAction="http://musicservicebl.somee.com/getFavoritosDeUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addArtistaFavoritoAUsuario">
+      <soap12:operation soapAction="http://musicservicebl.somee.com/addArtistaFavoritoAUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteArtistaFavoritoAUsuario">
+      <soap12:operation soapAction="http://musicservicebl.somee.com/deleteArtistaFavoritoAUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCorreos">
+      <soap12:operation soapAction="http://musicservicebl.somee.com/getCorreos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BLWebService">
+    <wsdl:port name="BLWebServiceSoap" binding="tns:BLWebServiceSoap">
+      <soap:address location="http://musicservicebl.somee.com/BLWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="BLWebServiceSoap12" binding="tns:BLWebServiceSoap12">
+      <soap12:address location="http://musicservicebl.somee.com/BLWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

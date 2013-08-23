@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://service.musicservice.com/" targetNamespace="http://service.musicservice.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="addAlbum" type="tns:addAlbum" />
+  <xs:element name="addAlbumResponse" type="tns:addAlbumResponse" />
+  <xs:element name="addArtista" type="tns:addArtista" />
+  <xs:element name="addArtistaFavorito" type="tns:addArtistaFavorito" />
+  <xs:element name="addArtistaFavoritoResponse" type="tns:addArtistaFavoritoResponse" />
+  <xs:element name="addArtistaResponse" type="tns:addArtistaResponse" />
+  <xs:element name="addCancion" type="tns:addCancion" />
+  <xs:element name="addCancionResponse" type="tns:addCancionResponse" />
+  <xs:element name="addUsuario" type="tns:addUsuario" />
+  <xs:element name="addUsuarioResponse" type="tns:addUsuarioResponse" />
+  <xs:element name="album" type="tns:album" />
+  <xs:element name="artista" type="tns:artista" />
+  <xs:element name="cancion" type="tns:cancion" />
+  <xs:element name="deleteAlbum" type="tns:deleteAlbum" />
+  <xs:element name="deleteAlbumResponse" type="tns:deleteAlbumResponse" />
+  <xs:element name="deleteArtista" type="tns:deleteArtista" />
+  <xs:element name="deleteArtistaFavorito" type="tns:deleteArtistaFavorito" />
+  <xs:element name="deleteArtistaFavoritoResponse" type="tns:deleteArtistaFavoritoResponse" />
+  <xs:element name="deleteArtistaResponse" type="tns:deleteArtistaResponse" />
+  <xs:element name="deleteCancion" type="tns:deleteCancion" />
+  <xs:element name="deleteCancionResponse" type="tns:deleteCancionResponse" />
+  <xs:element name="deleteUsuario" type="tns:deleteUsuario" />
+  <xs:element name="deleteUsuarioResponse" type="tns:deleteUsuarioResponse" />
+  <xs:element name="findAlbumById" type="tns:findAlbumById" />
+  <xs:element name="findAlbumByIdResponse" type="tns:findAlbumByIdResponse" />
+  <xs:element name="findAlbumByNombre" type="tns:findAlbumByNombre" />
+  <xs:element name="findAlbumByNombreResponse" type="tns:findAlbumByNombreResponse" />
+  <xs:element name="findAlbumsByIdArtista" type="tns:findAlbumsByIdArtista" />
+  <xs:element name="findAlbumsByIdArtistaResponse" type="tns:findAlbumsByIdArtistaResponse" />
+  <xs:element name="findAllAlbums" type="tns:findAllAlbums" />
+  <xs:element name="findAllAlbumsResponse" type="tns:findAllAlbumsResponse" />
+  <xs:element name="findAllArtistas" type="tns:findAllArtistas" />
+  <xs:element name="findAllArtistasResponse" type="tns:findAllArtistasResponse" />
+  <xs:element name="findAllCanciones" type="tns:findAllCanciones" />
+  <xs:element name="findAllCancionesResponse" type="tns:findAllCancionesResponse" />
+  <xs:element name="findArtistaById" type="tns:findArtistaById" />
+  <xs:element name="findArtistaByIdResponse" type="tns:findArtistaByIdResponse" />
+  <xs:element name="findArtistaByNombre" type="tns:findArtistaByNombre" />
+  <xs:element name="findArtistaByNombreResponse" type="tns:findArtistaByNombreResponse" />
+  <xs:element name="findCancionById" type="tns:findCancionById" />
+  <xs:element name="findCancionByIdResponse" type="tns:findCancionByIdResponse" />
+  <xs:element name="findCancionesByAlbumId" type="tns:findCancionesByAlbumId" />
+  <xs:element name="findCancionesByAlbumIdResponse" type="tns:findCancionesByAlbumIdResponse" />
+  <xs:element name="findCancionesByNombre" type="tns:findCancionesByNombre" />
+  <xs:element name="findCancionesByNombreResponse" type="tns:findCancionesByNombreResponse" />
+  <xs:element name="findCantidadAlbums" type="tns:findCantidadAlbums" />
+  <xs:element name="findCantidadAlbumsResponse" type="tns:findCantidadAlbumsResponse" />
+  <xs:element name="findCantidadArtistas" type="tns:findCantidadArtistas" />
+  <xs:element name="findCantidadArtistasResponse" type="tns:findCantidadArtistasResponse" />
+  <xs:element name="findCantidadCanciones" type="tns:findCantidadCanciones" />
+  <xs:element name="findCantidadCancionesResponse" type="tns:findCantidadCancionesResponse" />
+  <xs:element name="findFavoritos" type="tns:findFavoritos" />
+  <xs:element name="findFavoritosResponse" type="tns:findFavoritosResponse" />
+  <xs:element name="findRangeAlbums" type="tns:findRangeAlbums" />
+  <xs:element name="findRangeAlbumsResponse" type="tns:findRangeAlbumsResponse" />
+  <xs:element name="findRangeArtistas" type="tns:findRangeArtistas" />
+  <xs:element name="findRangeArtistasResponse" type="tns:findRangeArtistasResponse" />
+  <xs:element name="findRangeCanciones" type="tns:findRangeCanciones" />
+  <xs:element name="findRangeCancionesResponse" type="tns:findRangeCancionesResponse" />
+  <xs:element name="findUsuarioById" type="tns:findUsuarioById" />
+  <xs:element name="findUsuarioByIdResponse" type="tns:findUsuarioByIdResponse" />
+  <xs:element name="findUsuarioByUsername" type="tns:findUsuarioByUsername" />
+  <xs:element name="findUsuarioByUsernameResponse" type="tns:findUsuarioByUsernameResponse" />
+  <xs:element name="matches" type="tns:matches" />
+  <xs:element name="matchesResponse" type="tns:matchesResponse" />
+  <xs:element name="perfil" type="tns:perfil" />
+  <xs:element name="updateAlbum" type="tns:updateAlbum" />
+  <xs:element name="updateAlbumResponse" type="tns:updateAlbumResponse" />
+  <xs:element name="updateArtista" type="tns:updateArtista" />
+  <xs:element name="updateArtistaResponse" type="tns:updateArtistaResponse" />
+  <xs:element name="updateCancion" type="tns:updateCancion" />
+  <xs:element name="updateCancionResponse" type="tns:updateCancionResponse" />
+  <xs:element name="updateUsuario" type="tns:updateUsuario" />
+  <xs:element name="updateUsuarioResponse" type="tns:updateUsuarioResponse" />
+  <xs:element name="usuario" type="tns:usuario" />
+  <xs:complexType name="findArtistaByNombre">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findArtistaByNombreResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:artista" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="artista">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="generoArtista" type="xs:string" />
+      <xs:element minOccurs="0" name="idArtista" type="xs:int" />
+      <xs:element minOccurs="0" name="nombreArtista" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findCancionesByNombre">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findCancionesByNombreResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:cancion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cancion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="idAlbum" type="tns:album" />
+      <xs:element minOccurs="0" name="idCancion" type="xs:int" />
+      <xs:element minOccurs="0" name="nombreCancion" type="xs:string" />
+      <xs:element name="numeroTrack" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="album">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fechaPublicacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="generoAlbum" type="xs:string" />
+      <xs:element minOccurs="0" name="idAlbum" type="xs:int" />
+      <xs:element minOccurs="0" name="idArtista" type="tns:artista" />
+      <xs:element minOccurs="0" name="nombreAlbum" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="deleteArtista">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:artista" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="deleteArtistaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addCancion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:cancion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addCancionResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findRangeCanciones">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int" />
+      <xs:element name="arg1" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findRangeCancionesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:cancion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findAlbumByNombre">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findAlbumByNombreResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:album" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="updateCancion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:cancion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="updateCancionResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findRangeAlbums">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int" />
+      <xs:element name="arg1" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findRangeAlbumsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:album" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addAlbum">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:album" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addAlbumResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:usuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="usuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="apellido1" type="xs:string" />
+      <xs:element minOccurs="0" name="apellido2" type="xs:string" />
+      <xs:element minOccurs="0" name="email" type="xs:string" />
+      <xs:element minOccurs="0" name="idPerfil" type="tns:perfil" />
+      <xs:element minOccurs="0" name="idUsuario" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+      <xs:element minOccurs="0" name="username" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="perfil">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="idPerfil" type="xs:int" />
+      <xs:element minOccurs="0" name="nombrePerfil" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addUsuarioResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findArtistaById">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findArtistaByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:artista" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findAllArtistas">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="findAllArtistasResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:artista" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="deleteUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:usuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="deleteUsuarioResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findAlbumsByIdArtista">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findAlbumsByIdArtistaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:album" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="updateArtista">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:artista" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="updateArtistaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="updateAlbum">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:album" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="updateAlbumResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="matches">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="matchesResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addArtistaFavorito">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:usuario" />
+      <xs:element minOccurs="0" name="arg1" type="tns:artista" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addArtistaFavoritoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findCancionesByAlbumId">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findCancionesByAlbumIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:cancion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findCantidadAlbums">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="findCantidadAlbumsResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findUsuarioByUsername">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findUsuarioByUsernameResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:usuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findCantidadArtistas">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="findCantidadArtistasResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addArtista">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:artista" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addArtistaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findFavoritos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:usuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findFavoritosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:artista" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="deleteArtistaFavorito">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:usuario" />
+      <xs:element minOccurs="0" name="arg1" type="tns:artista" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="deleteArtistaFavoritoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findRangeArtistas">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int" />
+      <xs:element name="arg1" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findRangeArtistasResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:artista" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="updateUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:usuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="updateUsuarioResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findAllCanciones">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="findAllCancionesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:cancion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findCancionById">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findCancionByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:cancion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findCantidadCanciones">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="findCantidadCancionesResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="deleteCancion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:cancion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="deleteCancionResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findAllAlbums">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="findAllAlbumsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:album" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="deleteAlbum">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:album" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="deleteAlbumResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findAlbumById">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findAlbumByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:album" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findUsuarioById">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findUsuarioByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:usuario" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+  <persistence-unit name="com.serviciosweb_MusicService_war_1.0-SNAPSHOTPU" transaction-type="RESOURCE_LOCAL">
+   <!-- <jta-data-source>Music Service DB</jta-data-source> -->
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>com.musicservice.entities.Artista</class>
+    <class>com.musicservice.entities.Album</class>
+    <class>com.musicservice.entities.Cancion</class>
+    <class>com.musicservice.entities.Usuario</class>
+    <class>com.musicservice.entities.Perfil</class>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>    
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://mysql.patitocreations.com:3306/ws_amazon?zeroDateTimeBehavior=convertToNull"/>
+      <property name="javax.persistence.jdbc.password" value="ws_ftw4!"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.user" value="ws_amazon"/>
+    </properties>
+  </persistence-unit>
+</persistence>
